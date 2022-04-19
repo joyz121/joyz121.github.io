@@ -1,5 +1,4 @@
 ---
-​---
 layout: post
 title: "Perception"
 subtitle: "hello world"
@@ -8,16 +7,9 @@ header-img: "img/post-bg-farewell-flash.jpg"
 header-mask: 0.2
 tags:
   - 机器学习
-​---
 ---
 
 ## Perceptron
-
-[TOC]
-
-
-
-## 感知机模型
 
 - 适用于==线性可分的二分类==问题
 
