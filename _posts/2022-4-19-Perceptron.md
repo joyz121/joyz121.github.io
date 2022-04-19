@@ -11,9 +11,9 @@ tags:
 
 ## Perceptron
 
-- 适用于==线性可分的二分类==问题
+- 适用于线性可分的二分类问题
 
-- ==梯度下降法==对损失函数极小化
+- 梯度下降法对损失函数极小化
 
   
 
@@ -32,7 +32,7 @@ $L(w, b)=-\sum \limits_{x_i \in M } y_i(w*x_i+b)$  ,M为误分类点的集合
 
 ### Stochastic gradient descent(随机梯度下降)
 
-####损失函数的梯度
+#### 损失函数的梯度
 
 $\partial L/ \partial w=-\sum\limits_{x_i \in M } y_ix_i$
 
@@ -44,17 +44,17 @@ $\partial L/ \partial b=-\sum\limits_{x_i \in M }x_i$
 
 - 训练集数据$(x_i,y_i)$
 
-- if $y_i(w*x_i+b)<=0$ ==误分类数据==
+- if $y_i(w*x_i+b)<=0$ 误分类数据
 
   ​		$w=w+ny_ix_i$
 
   ​		$b=b+ny_i$
 
-  ==$n \in(0,1]$,称为学习率== 
+  $n \in(0,1]$,称为学习率
 
 
 
-##算法收敛性
+## 算法收敛性
 
 待填写
 
@@ -66,7 +66,7 @@ $\partial L/ \partial b=-\sum\limits_{x_i \in M }x_i$
 
 
 
-##Python实现
+## Python实现
 
 ```python
 import numpy as np
