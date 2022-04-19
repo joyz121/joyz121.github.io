@@ -1,12 +1,14 @@
 ---
+​---
 layout: post
 title: "Perception"
-subtitle: " "
+subtitle: "hello world"
 author: "Joy"
 header-img: "img/post-bg-farewell-flash.jpg"
 header-mask: 0.2
 tags:
   - 机器学习
+​---
 ---
 
 ## Perceptron
@@ -159,5 +161,3 @@ if __name__ == '__main__':
     preceptron(dataMat,label,200)
     show(w,b)
 ```
-
-![perceptron](..\img\perceptron.png)
