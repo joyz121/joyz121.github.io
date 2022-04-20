@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Perception"
+title: "Perceptron"
 subtitle: "感知机"
 author: "Joy"
-header-img: "img/post-bg-perceptron.jpg"
+header-img: "img/post-bg-infinity.jpg"
 header-mask: 0.2
 tags:
   - 机器学习
