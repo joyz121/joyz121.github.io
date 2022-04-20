@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Perception"
-subtitle: "hello world"
+subtitle: "感知机"
 author: "Joy"
-header-img: "img/post-bg-farewell-flash.jpg"
+header-img: "img/post-bg-perceptron.jpg"
 header-mask: 0.2
 tags:
   - 机器学习
