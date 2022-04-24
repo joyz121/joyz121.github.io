@@ -13,15 +13,11 @@ tags:
 
 # 第十五届智能车——声音信标
 
-[TOC]
-
-
-
 ## 赛题
 
 ​		在铺有蓝色广告布的平整场地内随机安放 5 至 15 左右的信标，车模在信标的导引下做定向运动。信标灯会发出**以0.2048s为周期频率250HZ-2000Hz的chirp信号和95mhz的RF信号**。
 
-​		开始比赛后，比赛系统自动会启动第一个信标，信标会发送声音和无线射频导引信号。此时选手的车模能够识别确定信标的方位并做定向运动。当车模上安放的磁标进入信标附近的感应线圈后，比赛系统会自动切换到下一个信标，车模随机前往第二个打开的信标。此过程将会进行 10 次左右。最终比赛时间是从当一个信标启动，到最后一次信标关闭为止。场地如下图所示：<img src="img/ground.png" style="zoom:70%;" />
+​		开始比赛后，比赛系统自动会启动第一个信标，信标会发送声音和无线射频导引信号。此时选手的车模能够识别确定信标的方位并做定向运动。当车模上安放的磁标进入信标附近的感应线圈后，比赛系统会自动切换到下一个信标，车模随机前往第二个打开的信标。此过程将会进行 10 次左右。最终比赛时间是从当一个信标启动，到最后一次信标关闭为止。场地如下图所示：<img src="../img/in-post/ground.png" style="zoom:70%;" />
 
 ## 硬件
 
@@ -97,7 +93,7 @@ void InverseKinematicsAnalysis(MecanumWheelParmNode *parm)
 
 参考代码如下：
 
-```C
+```c
 /*!
   * @brief    计算时延,返回最大值下标
   * @author   JoyZheng
@@ -128,8 +124,8 @@ int GetTimeDelay(int16_t *mic_data1, int16_t *mic_data2)
 	{
 		//fftOut_Mic_2存放互相关数组
 		temp_real=fftOut_Mic_2[i].real;
-        fftOut_Mic_2[i].real = (fftOut_Mic_1[i].real*fftOut_Mic_2[i].real 				*fftOut_Mic_1[i].imag * fftOut_Mic_2[i].imag);
-        fftOut_Mic_2[i].imag = (-fftOut_Mic_1[i].imag * temp_real + fftOut_Mic_1[i].real *fftOut_Mic_2[i].imag);
+        fftOut_Mic_2[i].real = (fftOut_Mic_1[i].real*fftOut_Mic_2[i].real*fftOut_Mic_1[i].imag * fftOut_Mic_2[i].imag);
+        fftOut_Mic_2[i].imag = (-fftOut_Mic_1[i].imag * temp_real + fftOut_Mic_1[i].real*fftOut_Mic_2[i].imag);
 
 //PATH加权
 //		temp2=sqrtf(fftOut_Mic_2[i].real*fftOut_Mic_2[i].real+fftOut_Mic_2[i].imag*fftOut_Mic_2[i].imag);
