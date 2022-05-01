@@ -33,7 +33,7 @@ tags:
 
 通过陀螺仪获得车身角度及角速度信息控制车身姿态。这种方案的优点是无需使用编码器，可快速调整车身姿态。流程图如下：
 
-<img class="shadow" width="400" src="/img/in-post/control.png"/>
+<img class="shadow" width="400" src="/img/in-post/control.jpg"/>
 
 ### 方案二、运动学解算
 
