@@ -25,7 +25,7 @@ tags:
 
 车模如图所示：
 
-<img src="../img/in-post/car.png" style="zoom:70%;" />
+![](https://github.com/joyz121/joyz121.github.io/blob/main/img/in-post/car.png)
 
 ## 麦克纳姆轮控制
 
