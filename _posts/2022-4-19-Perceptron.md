@@ -36,7 +36,7 @@ $L(w, b)=-\sum \limits_{x_i \in M } y_i(w*x_i+b)$  ,M为误分类点的集合
 
 $\partial L/ \partial w=-\sum\limits_{x_i \in M } y_ix_i$
 
-$\partial L/ \partial b=-\sum\limits_{x_i \in M }x_i$
+$\partial L/ \partial b=-\sum\limits_{x_i \in M }y_i$
 
 #### 感知机算法
 
