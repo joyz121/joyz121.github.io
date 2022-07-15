@@ -45,80 +45,80 @@ typedef struct LinkedList
 
 ## 链表的基本操作
 
-1. **打印链表**
+- **打印链表**
 
-   打印链表中各结点数据（除头结点和尾结点外）
+打印链表中各结点数据（除头结点和尾结点外）
 
-   ```c++
-   void PrintList(LinkedList* list)
-   {
-       ListNode* p=list->head->next;
-       while(p!=nullptr)
-       {
-           cout<<p->value<<" ";
-           p=p->next;
-       }
-   }
-   ```
+```c++
+void PrintList(LinkedList* list)
+{
+    ListNode* p=list->head->next;
+    while(p!=nullptr)
+    {
+        cout<<p->value<<" ";
+        p=p->next;
+    }
+}
+```
 
-2. **按位置查找结点**
+- **按位置查找结点**
 
-   ```c++
-   ListNode* FromLocGetNode(LinkedList* list,int loc)
-   {
-       ListNode* p=list->head;
-       int i;
-       //从头遍历，直到loc或p=nullptr
-       for(i=0;(p&&i<loc);i++)
-       {
-           p=p->next;
-       }
-       if(!p||i>loc)//p=nullptr 或者loc输入的位置小于0
-       {
-           cout<<"第"<<loc<<"个元素不存在"<<endl;
-           return nullptr;
-       }
-       else
-       {
-           cout<<"第"<<loc<<"个元素为："<<p->value<<endl;
-           return p;//返回节点指针
-       }
-   }
-   ```
+```c++
+ListNode* FromLocGetNode(LinkedList* list,int loc)
+{
+    ListNode* p=list->head;
+    int i;
+    //从头遍历，直到loc或p=nullptr
+    for(i=0;(p&&i<loc);i++)
+    {
+        p=p->next;
+    }
+    if(!p||i>loc)//p=nullptr 或者loc输入的位置小于0
+    {
+        cout<<"第"<<loc<<"个元素不存在"<<endl;
+        return nullptr;
+    }
+    else
+    {
+        cout<<"第"<<loc<<"个元素为："<<p->value<<endl;
+        return p;//返回节点指针
+    }
+}
+```
 
-3. **向链表中插入结点**
+- **向链表中插入结点**
 
-   ```c++
-   void InsertNode(LinkedList* list,int loc,double value)//loc->节点插入的位置
-   {
-       ListNode* temp=new ListNode(value);
-       ListNode* p=FromLocGetNode(list,loc-1);//寻找前一个节点
-       if(p)//p!=nullptr
-       {
-           temp->value=value;
-           temp->next=p->next;
-           p->next=temp;
-           list->len++;
-       }
-   }
-   ```
+```c++
+void InsertNode(LinkedList* list,int loc,double value)//loc->节点插入的位置
+{
+    ListNode* temp=new ListNode(value);
+    ListNode* p=FromLocGetNode(list,loc-1);//寻找前一个节点
+    if(p)//p!=nullptr
+    {
+        temp->value=value;
+        temp->next=p->next;
+        p->next=temp;
+        list->len++;
+    }
+}
+```
 
-4. **删除结点**
+- **删除结点**
 
-   ```C++
-   void DeleteNode(LinkedList* list,int loc)
-   {
-       ListNode* p=FromLocGetNode(list,loc-1);//寻找删除点前一个节点
-       ListNode* temp;
-       if(p)
-       {
-           temp=p->next;
-           p->next=temp->next;
-           free(temp);//此时被删除数据已经不在链表中，要有个中间变量存储其地址
-           list->len--;
-       }
-   }
-   ```
+```c++
+void DeleteNode(LinkedList* list,int loc)
+{
+    ListNode* p=FromLocGetNode(list,loc-1);//寻找删除点前一个节点
+    ListNode* temp;
+    if(p)
+    {
+        temp=p->next;
+        p->next=temp->next;
+        free(temp);//此时被删除数据已经不在链表中，要有个中间变量存储其地址
+        list->len--;
+    }
+}
+```
 
 ## 测试代码
 
