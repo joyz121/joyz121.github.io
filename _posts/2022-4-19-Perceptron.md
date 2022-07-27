@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Perceptron"
-subtitle: "感知机"
+title: "感知机"
+subtitle: "perceptron"
 author: "Joy"
 header-img: "img/post-bg-infinity.jpg"
 header-mask: 0.2
@@ -9,28 +9,25 @@ tags:
   - 机器学习
 ---
 
-## Perceptron
+# 感知机(Perceptron)
 
 - 适用于线性可分的二分类问题
 
 - 梯度下降法对损失函数极小化
 
-  
 
-## 学习策略
+## 一、学习策略
 
 - 数据集	$\{(x_1,y_1),(x_2,y_2)...(x_N,y_N)\}$，其中$y_i$为label
 - 求出超平面$w*x +b=0$ 将正样本和负样本分割到该超平面的两侧 
 
+## 二、如何求得超平面？
 
-
-## 如何求得超平面？
-
-### 损失函数
+### 2.1 损失函数
 
 $L(w, b)=-\sum \limits_{x_i \in M } y_i(w*x_i+b)$  ,M为误分类点的集合
 
-### Stochastic gradient descent(随机梯度下降)
+### 2.2 Stochastic gradient descent(随机梯度下降)
 
 #### 损失函数的梯度
 
@@ -52,21 +49,11 @@ $\partial L/ \partial b=-\sum\limits_{x_i \in M }y_i$
 
   $n \in(0,1]$,称为学习率
 
+## 三、解的不唯一性
 
+感知机算法的解既依赖于初值的选择，也依赖于误分类点的选择顺序。
 
-## 算法收敛性
-
-待填写
-
-
-
-## 解的不唯一性
-
-感知机算法的解既依赖于初值的选择，也依赖于误分类点的选择顺序
-
-
-
-## Python实现
+## 四、Python实现
 
 ```python
 import numpy as np

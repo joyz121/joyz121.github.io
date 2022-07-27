@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "LinkedList"
-subtitle: "线性表的链式实现"
+title: "线性表的链式实现"
+subtitle: "LinkedList"
 author: "Joy"
 header-img: "img/post-bg-halting.jpg"
 header-mask: 0.2
@@ -9,7 +9,9 @@ tags:
   - 数据结构
 ---
 
-# 线性表的链式实现
+# 线性表
+
+## 一、线性表的链式实现
 
 链表中的元素由两部分组成：
 
@@ -43,7 +45,7 @@ typedef struct LinkedList
 }LinkedList;
 ```
 
-## 链表的基本操作
+##二、链表的基本操作
 
 - **打印链表**
 
@@ -120,7 +122,7 @@ void DeleteNode(LinkedList* list,int loc)
 }
 ```
 
-## 测试代码
+## 三、测试代码
 
 ```c++
 int main()
@@ -145,4 +147,3 @@ int main()
     return 0;
 }
 ```
-
