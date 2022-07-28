@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " 智能车竞赛技术小结"
+title: "智能车竞赛技术小结"
 subtitle: "声音信标组"
 author: "Joy"
 header-img: "img/post-bg-halting.jpg"

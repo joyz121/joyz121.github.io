@@ -9,7 +9,9 @@ tags:
   - 数据结构
 ---
 
-# 线性表
+# 线性表(List)
+
+线性表树是由零或多个数据元素组成的有限序列。假设线性表的数据集合是{a1,a2,…,an}，除a1外，每个元素有且只有一个前驱；除an外，每个元素有且只有一个后继。
 
 ## 一、线性表的链式实现
 
@@ -23,8 +25,8 @@ tags:
 ```c++
 typedef struct ListNode
 {
-    double value;
-    ListNode* next;
+    double value;//数据域
+    ListNode* next;//指针域
     ListNode(double value=0,ListNode* next=nullptr)
     {
         this->value=value;
@@ -45,16 +47,16 @@ typedef struct LinkedList
 }LinkedList;
 ```
 
-##二、链表的基本操作
+## 二、链表的基本操作
 
 - **打印链表**
 
-打印链表中各结点数据（除头结点和尾结点外）
+循环方式输出单链表中各结点数据（除头结点和尾结点外）
 
 ```c++
 void PrintList(LinkedList* list)
 {
-    ListNode* p=list->head->next;
+    ListNode* p=list->head->next;//当前指向的节点
     while(p!=nullptr)
     {
         cout<<p->value<<" ";
@@ -147,3 +149,4 @@ int main()
     return 0;
 }
 ```
+
