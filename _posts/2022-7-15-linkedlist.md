@@ -9,18 +9,20 @@ tags:
   - 数据结构
 ---
 
-# 线性表(List)
-
 线性表树是由零或多个数据元素组成的有限序列。假设线性表的数据集合是{a1,a2,…,an}，除a1外，每个元素有且只有一个前驱；除an外，每个元素有且只有一个后继。
 
-## 一、线性表的链式实现
+## 链表
 
 链表中的元素由两部分组成：
 
 - 存储数据——"数据域"
 - 存储直接后续位置的指针——"指针域"
 
-将这两部分组成的元素的存储结构称为“结点“，我们使用结构体定义结点。
+将这两部分组成的元素的存储结构称为“结点“
+
+![node](/img/in-post/node.png)
+
+使用结构体定义结点：
 
 ```c++
 typedef struct ListNode
@@ -35,37 +37,37 @@ typedef struct ListNode
 }ListNode;
 ```
 
-链表由n个结点通过指针域相互链接构成。在链表的第一个结点之前会额外增设一个结点——头结点，头结点的数据域一般不存放数据；在链表的最后一个结点增设一个尾节点，尾结点的指针域存放nullptr。
+## 单链表
+
+​        链表由n个结点通过指针域相互链接构成。在链表的第一个结点之前会额外增设一个结点——头结点，头结点的数据域一般不存放数据；在链表的最后一个结点增设一个尾节点，尾结点的指针域存放nullptr。
+
+![linked_list](/img/in-post/linked_list.png)
 
 链表的实现方式如下：
 
 ```c++
 typedef struct LinkedList
 {
-    ListNode* head,*tail;
-    int len;
+	ListNode* head,*tail;
+	int len;
 }LinkedList;
 ```
 
-## 二、链表的基本操作
-
-- **打印链表**
-
-循环方式输出单链表中各结点数据（除头结点和尾结点外）
+链表遍历：
 
 ```c++
 void PrintList(LinkedList* list)
 {
-    ListNode* p=list->head->next;//当前指向的节点
-    while(p!=nullptr)
-    {
-        cout<<p->value<<" ";
-        p=p->next;
-    }
+	ListNode* p=list->head->next;//当前指向的节点
+	while(p!=nullptr)
+	{
+		cout<<p->value<<" ";
+		p=p->next;
+	}
 }
 ```
 
-- **按位置查找结点**
+按位置查找结点：
 
 ```c++
 ListNode* FromLocGetNode(LinkedList* list,int loc)
@@ -90,7 +92,11 @@ ListNode* FromLocGetNode(LinkedList* list,int loc)
 }
 ```
 
-- **向链表中插入结点**
+插入结点：先找到插入结点位置的前驱结点，然后令插入结点的 next 为前驱结点的 next；前驱结
+
+点的 next 为插入结点。
+
+![insert_node](/img/in-post/insert_node.png)
 
 ```c++
 void InsertNode(LinkedList* list,int loc,double value)//loc->节点插入的位置
@@ -107,7 +113,9 @@ void InsertNode(LinkedList* list,int loc,double value)//loc->节点插入的位�
 }
 ```
 
-- **删除结点**
+删除结点：
+
+![delete_node](/img/in-post/delete_node.png)
 
 ```c++
 void DeleteNode(LinkedList* list,int loc)
@@ -123,30 +131,3 @@ void DeleteNode(LinkedList* list,int loc)
     }
 }
 ```
-
-## 三、测试代码
-
-```c++
-int main()
-{
-    LinkedList* L=new LinkedList();//创建链表
-    L->head=(ListNode*)malloc(sizeof(ListNode));//创建表头,直接new ListNode(),表头将会存入数据
-    L->tail=(ListNode*)malloc(sizeof(ListNode));
-    L->head->next=L->tail;
-    ListNode* temp= L->head;
-    double num;
-    while(cin>>num)
-    {
-        ListNode *q=new ListNode(num);
-        temp->next=q;
-        temp=temp->next;
-        L->len++;
-    }
-    InsertNode(L,2,32);
-    PrintList(L);
-    DeleteNode(L,6);
-    PrintList(L);
-    return 0;
-}
-```
-
