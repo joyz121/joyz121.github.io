@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "线性表的链式实现"
-subtitle: "LinkedList"
+title: "数据结构：（一）链表"
+subtitle: "链表C++实现"
 author: "Joy"
 header-img: "img/post-bg-halting.jpg"
 header-mask: 0.2
