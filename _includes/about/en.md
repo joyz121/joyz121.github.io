@@ -1,1 +1,1 @@
-I am Joy:)
+I am majoring in image processing and deep learning.
